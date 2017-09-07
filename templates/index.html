@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard</title>
+    <!-- Bootstrap Core CSS -->
+    {% load static %}
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "css/simple-sidebar.css" %}" rel="stylesheet">
+    <link href="{% static "css/main.css" %}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div class="header">
+    <a href="#menu-toggle" id="menu-toggle">Dashboard</a>
+
+
+    <span>欲上民,必以言下之;欲先民,必以身后之</span>
+
+    <a class="sign-in" href="#">Sign in</a>
+
+</div>
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#index" role="tab" data-toggle="tab">
+                    Ctrip App
+                </a>
+            </li>
+            <li>
+                <a href="menu1" data-target="#keymanager" role="tab" data-toggle="tab">菜单一</a>
+            </li>
+            <li>
+                <a href="menu2" data-target="#expression-manager" role="tab" data-toggle="tab">菜单二</a>
+            </li>
+
+            <li>
+                <a href="#">菜单三</a>
+            </li>
+
+            <li>
+                <a href="#">菜单四</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="index">
+                <!-- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
+                Tangchiech的个人项目管理平台。开发实用工具。代码请戳<a href="https://github.com/tangchiech">github</a>。
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="keymanager">
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="expression-manager">
+            </div>
+
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="{% static "js/jquery.js" %}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+
+    $("#wrapper").toggleClass("toggled");
+
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+    $('[data-toggle="tab"]').click(function (e) {
+        var $this = $(this),
+                loadurl = $this.attr('href'),
+                targ = $this.attr('data-target');
+
+        $.get(loadurl, function (data) {
+            $(targ).html(data);
+        });
+
+        $this.tab('show');
+        return false;
+    });
+
+</script>
+
+</body>
+</html>

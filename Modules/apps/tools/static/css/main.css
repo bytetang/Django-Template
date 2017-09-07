@@ -1,0 +1,31 @@
+.header{
+	height: 40px;
+	background-color: #222;
+}
+
+.header span{
+	line-height: 40px;
+	color: #eee;
+	margin-top: 0;
+	margin-left: 30px;
+	margin-bottom: 0;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1.3rem;
+}
+
+#menu-toggle{
+	margin-left: 30px;
+	line-height: 40px;
+	font-size: 2rem;
+	color: #eee;
+	font-weight: 700;
+}
+
+.sign-in{
+	line-height: 40px;
+	float: right;
+	margin-right: 30px;
+	color: #009ACD;
+	font-size: 1.7rem;
+
+}
